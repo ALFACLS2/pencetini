@@ -2,27 +2,49 @@
   --bg-image: url('https://res.cloudinary.com/dprt1m1wl/image/upload/v1774676745/ChatGPT_Image_Mar_28_2026_12_44_07_PM_uiti48.png');
 }
 
+/* ===== BACKGROUND ===== */
 .bg {
   position: fixed;
   inset: 0;
-  background: var(--bg-image) center/cover;
-  filter: blur(14px) brightness(0.4);
+  background: var(--bg-image) center/cover no-repeat;
+
+  /* lebih aman dari blur brutal */
+  filter: brightness(0.6);
+  z-index: -1;
 }
 
+/* ===== CONTAINER ===== */
 .app {
-  min-height: 100vh;
+  min-height: 100dvh; /* FIX IG BUG */
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
+/* ===== CARD ===== */
 .card {
   width: 360px;
   border-radius: 25px;
   padding: 18px;
   color: white;
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(25px);
+
+  /* bikin clean tanpa ngerusak IG */
+  background: rgba(255,255,255,0.08);
+
+  /* fallback blur */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   position: relative;
+}
+
+/* ===== MOBILE FIX (WAJIB BANGET) ===== */
+@media (max-width: 768px) {
+  .card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(0,0,0,0.6);
+  }
 }
