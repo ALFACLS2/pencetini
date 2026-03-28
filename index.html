@@ -18,36 +18,65 @@
 <main class="app">
   <section class="card">
 
-    <div class="hero">
-      <div class="hero-img"></div>
-    </div>
+    <!-- HOME -->
+    <section id="homePage" class="page active">
 
-    <h1>Start Your Career 🚀</h1>
-    <p class="sub">
-      Mulai langkah pertamamu sekarang dan raih peluang karirmu
-    </p>
+      <div class="hero">
+        <div class="hero-img"></div>
+      </div>
 
-    <a href="https://alfakarir.alfamart.co.id/register" target="_blank" class="btn primary">
-      🚀 Step 1: Register Account
-    </a>
+      <h1>Start Your Career 🚀</h1>
+      <p class="sub">
+        Mulai langkah pertamamu sekarang dan raih peluang karirmu
+      </p>
 
-    <a href="https://alfakarir.alfamart.co.id/vacancy?filter=true&branch=cileungsi2&idb=ZlFwT3pUaVBqWmNQU2poOXVUazlnZz09" target="_blank" class="btn">
-      📄 Step 2: Apply Job
-    </a>
-
-    <div class="separator"></div>
-
-    <div class="social">
-      <a href="faq/faq.html" class="btn">❓ FAQ</a>
-      <a href="https://www.tiktok.com" target="_blank" class="btn">🎵 TikTok</a>
-    </div>
-
-    <div class="footer">
-      <div>Powered by <strong>REC CLS 2</strong></div>
-      <a href="https://www.linkedin.com/in/anggoro404/" target="_blank" class="creator">
-        📷 404._.anggoro
+      <a href="https://alfakarir.alfamart.co.id/register" target="_blank" class="btn primary">
+        🚀 Step 1: Register Account
       </a>
-    </div>
+
+      <a href="https://alfakarir.alfamart.co.id/vacancy?filter=true&branch=cileungsi2&idb=ZlFwT3pUaVBqWmNQU2poOXVUazlnZz09" target="_blank" class="btn">
+        📄 Step 2: Apply Job
+      </a>
+
+      <div class="separator"></div>
+
+      <div class="social">
+        <button class="btn" id="faqBtn">❓ FAQ</button>
+        <a href="https://www.tiktok.com" target="_blank" class="btn">🎵 TikTok</a>
+      </div>
+
+      <div class="footer">
+        <div>Powered by <strong>REC CLS 2</strong></div>
+        <a href="https://www.linkedin.com/in/anggoro404/" target="_blank" class="creator">
+          📷 404._.anggoro
+        </a>
+      </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section id="faqPage" class="page">
+
+      <h1>FAQ</h1>
+      <p class="sub">Klik untuk melihat jawaban</p>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <img src="https://res.cloudinary.com/dprt1m1wl/image/upload/v1774676745/ChatGPT_Image_Mar_28_2026_12_44_07_PM_uiti48.png">
+        <h3>Bagaimana cara daftar?</h3>
+        <p>Klik tombol register lalu isi data lengkap.</p>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <img src="https://res.cloudinary.com/dprt1m1wl/image/upload/v1774676745/ChatGPT_Image_Mar_28_2026_12_44_07_PM_uiti48.png">
+        <h3>Apakah gratis?</h3>
+        <p>Ya, seluruh proses rekrutmen tidak dipungut biaya.</p>
+      </div>
+
+      <div class="faq-back">
+        <button class="btn" id="backBtn">← Kembali</button>
+      </div>
+
+    </section>
 
   </section>
 </main>
