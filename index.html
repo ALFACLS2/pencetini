@@ -18,14 +18,14 @@
   <section class="card">
 
     <!-- HERO -->
-  <div class="hero">
-  <div class="hero-img"></div>
+    <div class="hero">
+      <div class="hero-img"></div>
 
-  <div class="hero-card">
-    <h1>Start Your Career</h1>
-    <p>Ikuti langkah berikut untuk melamar kerja</p>
-  </div>
-</div>
+      <div class="hero-card">
+        <h1>Start Your Career</h1>
+        <p>Ikuti langkah berikut untuk melamar kerja</p>
+      </div>
+    </div>
 
     <!-- STEP -->
     <a href="https://alfakarir.alfamart.co.id/register" target="_blank" class="btn primary">
@@ -53,22 +53,15 @@
     <div class="separator"></div>
 
     <div class="social">
-      <a href="https://www.tiktok.com/@rekrutmen_alfacileungsi2" target="_blank" class="btn">
-        🎵 TikTok
-      </a>
-
-      <a href="https://instagram.com/" target="_blank" class="btn">
-        📸 Instagram
-      </a>
+      <a href="https://www.tiktok.com/@rekrutmen_alfacileungsi2" target="_blank" class="btn">🎵 TikTok</a>
+      <a href="https://instagram.com/" target="_blank" class="btn">📸 Instagram</a>
     </div>
 
     <!-- FOOTER -->
     <div class="footer">
       <div>Powered by <strong>REC CLS 2</strong></div>
       <div>The <strong>Creator</strong></div>
-      <a href="https://www.linkedin.com/in/anggoro404/" target="_blank" class="creator">
-        404._.anggoro
-      </a>
+      <a href="#" class="creator">404._.anggoro</a>
     </div>
 
   </section>
@@ -90,81 +83,7 @@
   </div>
 </div>
 
-<!-- SCRIPT -->
-<script>
-
-const KNOWLEDGE = [
-  {
-    keywords: ["skck"],
-    answer: "Silakan urus SKCK terlebih dahulu sebelum tes."
-  },
-  {
-    keywords: ["npwp"],
-    answer: "NPWP bisa dibuat secara online."
-  },
-  {
-    keywords: ["dresscode", "baju"],
-    answer: "Gunakan polo hitam dan sepatu bertali."
-  }
-];
-
-function openChatbot(){
-  document.getElementById("chatbot").style.display = "block";
-}
-
-function closeChatbot(){
-  document.getElementById("chatbot").style.display = "none";
-}
-
-function sendMessage(){
-  const input = document.getElementById("chat-input");
-  const text = input.value.toLowerCase();
-  if(!text) return;
-
-  addMessage(text, "user");
-
-  let response = "Maaf, belum ada jawaban.";
-
-  KNOWLEDGE.forEach(item => {
-    item.keywords.forEach(k => {
-      if(text.includes(k)){
-        response = item.answer;
-      }
-    });
-  });
-
-  setTimeout(()=>{
-    addMessage(response, "bot");
-  }, 300);
-
-  input.value = "";
-}
-
-function addMessage(text, type){
-  const chat = document.getElementById("chat-window");
-
-  const div = document.createElement("div");
-  div.style.marginBottom = "8px";
-  div.style.textAlign = type === "user" ? "right" : "left";
-
-  div.innerHTML = `
-    <span style="
-      display:inline-block;
-      padding:8px 12px;
-      border-radius:12px;
-      background:${type === "user" ? "#ff7a18" : "#333"};
-      color:white;
-      max-width:70%;
-    ">
-      ${text}
-    </span>
-  `;
-
-  chat.appendChild(div);
-  chat.scrollTop = chat.scrollHeight;
-}
-
-</script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
