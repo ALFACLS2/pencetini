@@ -76,9 +76,14 @@
 
 <script>
 
+/* ================= CATEGORY ================= */
+
 function showCategory(){
   const el = document.getElementById("content");
   el.innerHTML = "";
+
+  document.getElementById("title").innerText = "FAQ";
+  document.getElementById("subtitle").innerText = "Pilih kategori";
 
   FAQ_DATA.forEach((cat, index) => {
     el.innerHTML += `
@@ -89,6 +94,8 @@ function showCategory(){
     `;
   });
 }
+
+/* ================= DETAIL ================= */
 
 function showFAQ(index){
   const el = document.getElementById("content");
@@ -108,11 +115,15 @@ function showFAQ(index){
     `;
   });
 
-  el.innerHTML += `<button class="btn back-main" onclick="location.href='../index.html'">
-  ⬅ Kembali ke Halaman Awal
-</button>
+  /* 🔥 INI YANG TADI ERROR — SUDAH FIX */
+  el.innerHTML += `
+    <button class="btn back-main" onclick="location.href='../index.html'">
+      ⬅ Kembali ke Halaman Awal
+    </button>
+  `;
 }
 
+/* INIT */
 showCategory();
 
 </script>
