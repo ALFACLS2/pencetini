@@ -8,20 +8,12 @@
   inset: 0;
   background: var(--bg-image) center/cover no-repeat;
 
-  /* lebih aman dari blur brutal */
-  .bg {
-  position: fixed;
-  inset: 0;
-  background: var(--bg-image) center/cover no-repeat;
-
   /* blur cinematic */
   filter: blur(10px) brightness(0.5);
 
   /* biar blur gak bikin pinggir kosong */
   transform: scale(1.1);
 
-  z-index: -1;
-}
   z-index: -1;
 }
 
@@ -41,10 +33,8 @@
   padding: 18px;
   color: white;
 
-  /* bikin clean tanpa ngerusak IG */
   background: rgba(255,255,255,0.08);
 
-  /* fallback blur */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
@@ -52,11 +42,18 @@
   position: relative;
 }
 
-/* ===== MOBILE FIX (WAJIB BANGET) ===== */
+/* ===== MOBILE FIX ===== */
 @media (max-width: 768px) {
+
   .card {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     background: rgba(0,0,0,0.6);
   }
+
+  .bg {
+    filter: blur(6px) brightness(0.5);
+    transform: scale(1.05);
+  }
+
 }
