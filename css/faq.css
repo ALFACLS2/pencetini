@@ -1,0 +1,13 @@
+.faq-item {
+  margin-bottom: 15px;
+}
+
+.faq-item img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.faq-back {
+  margin-top: 20px;
+}
