@@ -1,1 +1,1 @@
-console.log("App ready 🚀");
+console.log("Ready 🚀");
