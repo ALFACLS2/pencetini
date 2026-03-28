@@ -1,1 +1,42 @@
-/* kosong (tidak dipakai sekarang) */
+.page {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+
+.page.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* FAQ */
+.faq-item {
+  background: rgba(255,255,255,0.05);
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.faq-item img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.faq-item p {
+  display: none;
+  margin-top: 5px;
+}
+
+.faq-item.active p {
+  display: block;
+}
+
+.faq-back {
+  margin-top: 20px;
+}
