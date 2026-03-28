@@ -3,40 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Career Start</title>
+<title>Career Guide</title>
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
 </head>
 
 <body>
 
-<div class="container">
+<div class="bg"></div>
 
-  <div class="hero">
-    <h1>Start Your Career 🚀</h1>
-    <p>Mulai langkah pertamamu sekarang</p>
-  </div>
+<main class="app">
+  <section class="card">
 
-  <div class="cards">
+    <!-- ================= HOME ================= -->
+    <section id="homePage" class="page active">
 
-    <a href="faq.html" class="card">
-      <img src="https://picsum.photos/300/200?1">
-      <h3>Administrasi</h3>
-    </a>
+      <div class="hero">
+        <div class="hero-img"></div>
+      </div>
 
-    <a href="faq.html" class="card">
-      <img src="https://picsum.photos/300/200?2">
-      <h3>Dress Code</h3>
-    </a>
+      <h1>Start Your Career</h1>
+      <div class="sub">Ikuti langkah berikut untuk melamar kerja</div>
 
-    <a href="faq.html" class="card">
-      <img src="https://picsum.photos/300/200?3">
-      <h3>Lokasi Tes</h3>
-    </a>
+      <a href="https://alfakarir.alfamart.co.id/register" target="_blank" class="btn primary">
+        🚀 Step 1: Register Account
+      </a>
 
-  </div>
+      <a href="https://alfakarir.alfamart.co.id/vacancy?filter=true&branch=cileungsi2&idb=ZlFwT3pUaVBqWmNQU2poOXVUazlnZz09" target="_blank" class="btn">
+        📄 Step 2: Apply Job
+      </a>
 
-</div>
+      <div class="separator"></div>
+
+      <div class="social">
+        <button class="btn" id="faqBtn">❓ FAQ</button>
+
+        <a href="https://www.tiktok.com" target="_blank" class="btn">
+          🎵 TikTok
+        </a>
+      </div>
+
+      <div class="footer">
+        <div>Powered by <strong>REC CLS 2</strong></div>
+        <a href="https://www.linkedin.com/in/anggoro404/" target="_blank" class="creator">
+          📷 404._.anggoro
+        </a>
+      </div>
+
+    </section>
+
+    <!-- ================= CATEGORY ================= -->
+    <section id="faqCategoryPage" class="page">
+      <h1>FAQ</h1>
+      <p class="sub">Pilih kategori</p>
+      <div id="faqCategoryList"></div>
+      <button class="btn" id="backHomeBtn">← Kembali</button>
+    </section>
+
+    <!-- ================= DETAIL ================= -->
+    <section id="faqDetailPage" class="page">
+      <h1 id="faqTitle"></h1>
+      <div id="faqDetailList"></div>
+      <button class="btn" id="backCategoryBtn">← Kembali</button>
+    </section>
+
+  </section>
+</main>
+
+<script src="js/faq-data.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
