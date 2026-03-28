@@ -19,28 +19,32 @@
   <section class="card">
 
     <h1>FAQ</h1>
-    <p class="sub">Pertanyaan yang sering ditanyakan</p>
+    <p class="sub">Klik untuk melihat jawaban</p>
 
-    <!-- FAQ ITEM -->
-    <div class="faq-item">
+    <div class="faq-item" onclick="toggleFAQ(this)">
       <img src="https://res.cloudinary.com/dprt1m1wl/image/upload/v1774676745/ChatGPT_Image_Mar_28_2026_12_44_07_PM_uiti48.png">
       <h3>Bagaimana cara daftar?</h3>
       <p>Klik tombol register lalu isi data lengkap.</p>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item" onclick="toggleFAQ(this)">
       <img src="https://res.cloudinary.com/dprt1m1wl/image/upload/v1774676745/ChatGPT_Image_Mar_28_2026_12_44_07_PM_uiti48.png">
       <h3>Apakah gratis?</h3>
       <p>Ya, seluruh proses rekrutmen tidak dipungut biaya.</p>
     </div>
 
-    <!-- BACK -->
     <div class="faq-back">
       <a href="../index.html" class="btn">← Kembali</a>
     </div>
 
   </section>
 </main>
+
+<script>
+function toggleFAQ(el){
+  el.classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
