@@ -96,11 +96,11 @@ window.onload = function(){
     image: "https://res.cloudinary.com/dprt1m1wl/image/upload/v1774710544/tulisan_400_x_200_px_2_cljmse.png",
     items: [
       { q: "Sepatu bebas?", a: "Bebas, tapi WAJIB bertali." },
-      { q: "Bagaimana jika Ga punya polo hitam?", a: "Usahakan dulu dengan pinjam. Kalau tidak, pertimbangkan untuk ikut." },
-      { q: "Apakah boleh menggunakan polo selain warna hitam?", a: "Tidak. Harus hitam." },
+      { q: "Bagaimana jika ga punya polo hitam?", a: "Usahakan pinjam dulu. Kalau tidak, pertimbangkan untuk ikut." },
+      { q: "Boleh polo selain hitam?", a: "Tidak. Harus hitam." },
       { q: "Kalau pakai kemeja/kaos hitam?", a: "Tidak. Wajib polo hitam." },
-      { q: "Jika mengenakan hijab ketentuannya seperti apa?", a: "Mohon untuk menggunakan hijab segiempat dan diikat di leher." },
-      { q: "Untuk penampilan Rambut/kumis/jenggot bagaimana pak?", a: "Harap untuk Dirapikan." }
+      { q: "Hijab bagaimana?", a: "Gunakan hijab segiempat dan diikat di leher." },
+      { q: "Rambut/kumis/jenggot?", a: "Harap dirapikan." }
     ]
   },
   {
@@ -115,27 +115,28 @@ window.onload = function(){
     title: "🌐 Sistem & Akun",
     image: "https://res.cloudinary.com/dprt1m1wl/image/upload/v1774711319/tulisan_400_x_200_px_4_dm1tgs.png",
     items: [
-      { q: "NIK sudah terdaftar?", a: "Cek panduan di IG alfakarir.cileungsi2" },
-      { q: "Saya belum daftar Alfakarir bagaimana?", a: "Wajib memiliki akun alfakarir, untuk mendaftar silakan kembali ke home" }
+      { q: "NIK sudah terdaftar?", a: "Cek IG alfakarir.cileungsi2" },
+      { q: "Belum daftar Alfakarir?", a: "Wajib punya akun, daftar dari halaman utama." }
     ]
   },
   {
-    title: "❌ Ketidakhadiran,Status & Walk In Interview",
+    title: "❌ Ketidakhadiran & Walk In",
     image: "https://res.cloudinary.com/dprt1m1wl/image/upload/v1774712466/tulisan_400_x_200_px_5_md2nqe.png",
-items: [
-  { q: "Pak saya sempat diundang namun tidak hadir, apakah saya bisa daftar lagi?", a: "Silakan datang ketika kami membuka Walk in Interview" },
-  { q: "Kapan ada Jadwal Walk In Interview?", a: "Untuk Jadwal Walk In Interview akan diupdate terus jadi mohon untuk pantau terus instagram kami." },
-  { q: "Untuk Posisi yang dibuka apa saja ketika Walk In Interview?", a: "Untuk Posisi menyesuaikan kebutuhan." }
-]
+    items: [
+      { q: "Tidak hadir sebelumnya, bisa daftar lagi?", a: "Bisa. Ikuti Walk In Interview." },
+      { q: "Jadwal Walk In?", a: "Pantau Instagram untuk update terbaru." },
+      { q: "Posisi apa saja?", a: "Menyesuaikan kebutuhan." }
+    ]
   },
   {
     title: "⚠️ Catatan Penting",
     image: "https://res.cloudinary.com/dprt1m1wl/image/upload/v1774712879/tulisan_400_x_200_px_6_edabbv.png",
     items: [
-      { q: "Kenapa lamaran saya masih diproses?", a: "Jika lamaran diproses mohon untuk ditunggu terkait dengan proses selanjutnya, namun jika ingin mengikuti seleksi tanpa menunggu undangan email silakan ikut Walk In Interview" },
-      { q: "Saya sudah pernah ikut namun gagal dan status lamaran saya masih di proses di alfakarir bagaiamana?", a: "Jika masih tertarik mengikuti kembali tes seleksi di cabang cileungsi silakan untuk mengikuti Walk In Interview" }
+      { q: "Lamaran masih diproses?", a: "Mohon ditunggu atau bisa ikut Walk In." },
+      { q: "Sudah gagal tapi status masih diproses?", a: "Boleh ikut Walk In lagi." }
     ]
   }
+
 ];
 
   const content = document.getElementById("content");
@@ -146,11 +147,12 @@ items: [
     FAQ_DATA.forEach((cat, i) => {
       const div = document.createElement("div");
       div.className = "category-card";
-div.innerHTML = `
-  <img src="${cat.image}?t=${new Date().getTime()}">
-  <div class="category-title">${cat.title}</div>
-`;title}</div>
+
+      div.innerHTML = `
+        <img src="${cat.image}?t=${new Date().getTime()}">
+        <div class="category-title">${cat.title}</div>
       `;
+
       div.onclick = () => showFAQ(i);
       content.appendChild(div);
     });
@@ -162,10 +164,12 @@ div.innerHTML = `
     FAQ_DATA[index].items.forEach(item=>{
       const div = document.createElement("div");
       div.className = "faq-card";
+
       div.innerHTML = `
         <div class="q">${item.q}</div>
         <div class="a">${item.a}</div>
       `;
+
       content.appendChild(div);
     });
 
