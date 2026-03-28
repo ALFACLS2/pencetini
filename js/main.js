@@ -6,7 +6,7 @@ const categoryList = document.getElementById("faqCategoryList");
 const detailList = document.getElementById("faqDetailList");
 const title = document.getElementById("faqTitle");
 
-// NAVIGATION
+// NAV
 document.getElementById("faqBtn").onclick = () => {
   home.classList.remove("active");
   categoryPage.classList.add("active");
@@ -23,14 +23,14 @@ document.getElementById("backCategoryBtn").onclick = () => {
 };
 
 // RENDER CATEGORY
-FAQ_DATA.forEach((cat, index) => {
+FAQ_DATA.forEach((cat, i) => {
   const div = document.createElement("div");
   div.className = "category-card";
   div.innerHTML = `
     <img src="${cat.image}">
     <div class="category-title">${cat.title}</div>
   `;
-  div.onclick = () => openCategory(index);
+  div.onclick = () => openCategory(i);
   categoryList.appendChild(div);
 });
 
