@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/layout.css">
 <link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/pages.css">
 </head>
 
 <body>
@@ -18,6 +17,7 @@
 <main class="app">
   <section class="card">
 
+    <!-- HERO -->
     <div class="hero">
       <div class="hero-img"></div>
     </div>
@@ -25,6 +25,7 @@
     <h1>Start Your Career</h1>
     <div class="sub">Ikuti langkah berikut untuk melamar kerja</div>
 
+    <!-- STEP -->
     <a href="https://alfakarir.alfamart.co.id/register" target="_blank" class="btn primary">
       🚀 Step 1: Register Account
     </a>
@@ -33,26 +34,135 @@
       📄 Step 2: Apply Job
     </a>
 
+    <!-- FITUR -->
     <div class="separator"></div>
 
     <div class="social">
       <a href="faq/faq.html" class="btn">❓ FAQ</a>
-
-<a href="https://www.tiktok.com/@rekrutmen_alfacileungsi2?_r=1&_t=ZS-9548j05Kg21" target="_blank" class="btn">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Ionicons_logo-tiktok.svg" 
-       style="width:18px; vertical-align:middle; margin-right:6px;">
-  TikTok
-</a>
+      <button onclick="openChatbot()" class="btn">💬 Chatbot</button>
     </div>
 
+    <div class="social">
+      <a href="alur/index.html" class="btn">🧭 Alur</a>
+      <a href="testimoni/index.html" class="btn">💬 Kata Mereka</a>
+    </div>
+
+    <!-- SOSMED -->
+    <div class="separator"></div>
+
+    <div class="social">
+      <a href="https://www.tiktok.com/@rekrutmen_alfacileungsi2" target="_blank" class="btn">
+        🎵 TikTok
+      </a>
+
+      <a href="https://instagram.com/" target="_blank" class="btn">
+        📸 Instagram
+      </a>
+    </div>
+
+    <!-- FOOTER -->
     <div class="footer">
       <div>Powered by <strong>REC CLS 2</strong></div>
-<div>The <strong>Creator</strong></div> <a href="https://www.linkedin.com/in/anggoro404/" target="_blank" class="creator"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/250px-Instagram_icon.png" style="width:16px; vertical-align:middle; margin-right:6px;"> 404._.anggoro </a>
-  </div>
-</div>
+      <div>The <strong>Creator</strong></div>
+      <a href="https://www.linkedin.com/in/anggoro404/" target="_blank" class="creator">
+        404._.anggoro
+      </a>
+    </div>
 
   </section>
 </main>
+
+<!-- CHATBOT -->
+<div id="chatbot" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:999;">
+  <div style="position:absolute; bottom:0; width:100%; max-width:420px; left:50%; transform:translateX(-50%);
+              background:#1e1e1e; border-radius:20px 20px 0 0; padding:15px;">
+
+    <div id="chat-window" style="height:300px; overflow-y:auto; margin-bottom:10px;"></div>
+
+    <div style="display:flex; gap:10px;">
+      <input id="chat-input" placeholder="Tanya di sini..." style="flex:1; padding:10px; border-radius:10px; border:none;">
+      <button onclick="sendMessage()" class="btn">Kirim</button>
+    </div>
+
+    <button onclick="closeChatbot()" class="btn" style="margin-top:10px;">Tutup</button>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+
+const KNOWLEDGE = [
+  {
+    keywords: ["skck"],
+    answer: "Silakan urus SKCK terlebih dahulu sebelum tes."
+  },
+  {
+    keywords: ["npwp"],
+    answer: "NPWP bisa dibuat secara online."
+  },
+  {
+    keywords: ["dresscode", "baju"],
+    answer: "Gunakan polo hitam dan sepatu bertali."
+  }
+];
+
+function openChatbot(){
+  document.getElementById("chatbot").style.display = "block";
+}
+
+function closeChatbot(){
+  document.getElementById("chatbot").style.display = "none";
+}
+
+function sendMessage(){
+  const input = document.getElementById("chat-input");
+  const text = input.value.toLowerCase();
+  if(!text) return;
+
+  addMessage(text, "user");
+
+  let response = "Maaf, belum ada jawaban.";
+
+  KNOWLEDGE.forEach(item => {
+    item.keywords.forEach(k => {
+      if(text.includes(k)){
+        response = item.answer;
+      }
+    });
+  });
+
+  setTimeout(()=>{
+    addMessage(response, "bot");
+  }, 300);
+
+  input.value = "";
+}
+
+function addMessage(text, type){
+  const chat = document.getElementById("chat-window");
+
+  const div = document.createElement("div");
+  div.style.marginBottom = "8px";
+  div.style.textAlign = type === "user" ? "right" : "left";
+
+  div.innerHTML = `
+    <span style="
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:12px;
+      background:${type === "user" ? "#ff7a18" : "#333"};
+      color:white;
+      max-width:70%;
+    ">
+      ${text}
+    </span>
+  `;
+
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+</script>
 
 </body>
 </html>
