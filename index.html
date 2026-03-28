@@ -28,58 +28,38 @@
     </div>
 
     <!-- STEP -->
-    <a href="https://alfakarir.alfamart.co.id/register" target="_blank" class="btn primary">
+    <a href="#" class="btn primary">
       🚀 Step 1: Register Account
     </a>
 
-    <a href="https://alfakarir.alfamart.co.id/vacancy?filter=true&branch=cileungsi2&idb=ZlFwT3pUaVBqWmNQU2poOXVUazlnZz09" target="_blank" class="btn">
+    <a href="#" class="btn">
       📄 Step 2: Apply Job
     </a>
 
-    <!-- FITUR -->
+    <!-- MENU -->
     <div class="separator"></div>
 
-    <div class="social">
-      <a href="faq/faq.html" class="btn">❓ FAQ</a>
+    <div class="grid">
+      <a href="faq.html" class="btn">❓ FAQ</a>
       <button onclick="openChatbot()" class="btn">💬 Chatbot</button>
-    </div>
-
-    <div class="social">
-      <a href="alur/index.html" class="btn">🧭 Alur</a>
-      <a href="testimoni/index.html" class="btn">💬 Kata Mereka</a>
-    </div>
-
-    <!-- SOSMED -->
-    <div class="separator"></div>
-
-    <div class="social">
-      <a href="https://www.tiktok.com/@rekrutmen_alfacileungsi2" target="_blank" class="btn">🎵 TikTok</a>
-      <a href="https://instagram.com/" target="_blank" class="btn">📸 Instagram</a>
-    </div>
-
-    <!-- FOOTER -->
-    <div class="footer">
-      <div>Powered by <strong>REC CLS 2</strong></div>
-      <div>The <strong>Creator</strong></div>
-      <a href="#" class="creator">404._.anggoro</a>
+      <a href="#" class="btn">🧭 Alur</a>
+      <a href="#" class="btn">💬 Testimoni</a>
     </div>
 
   </section>
 </main>
 
 <!-- CHATBOT -->
-<div id="chatbot" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:999;">
-  <div style="position:absolute; bottom:0; width:100%; max-width:420px; left:50%; transform:translateX(-50%);
-              background:#1e1e1e; border-radius:20px 20px 0 0; padding:15px;">
+<div id="chatbot" class="chatbot">
+  <div class="chatbox">
+    <div id="chat-window"></div>
 
-    <div id="chat-window" style="height:300px; overflow-y:auto; margin-bottom:10px;"></div>
-
-    <div style="display:flex; gap:10px;">
-      <input id="chat-input" placeholder="Tanya di sini..." style="flex:1; padding:10px; border-radius:10px; border:none;">
+    <div class="chat-input">
+      <input id="chat-input" placeholder="Tanya di sini...">
       <button onclick="sendMessage()" class="btn">Kirim</button>
     </div>
 
-    <button onclick="closeChatbot()" class="btn" style="margin-top:10px;">Tutup</button>
+    <button onclick="closeChatbot()" class="btn">Tutup</button>
   </div>
 </div>
 
