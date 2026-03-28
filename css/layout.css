@@ -9,7 +9,19 @@
   background: var(--bg-image) center/cover no-repeat;
 
   /* lebih aman dari blur brutal */
-  filter: brightness(0.6);
+  .bg {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-image) center/cover no-repeat;
+
+  /* blur cinematic */
+  filter: blur(10px) brightness(0.5);
+
+  /* biar blur gak bikin pinggir kosong */
+  transform: scale(1.1);
+
+  z-index: -1;
+}
   z-index: -1;
 }
 
