@@ -1,142 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAQ</title>
-
-<link rel="stylesheet" href="../css/base.css">
-<link rel="stylesheet" href="../css/layout.css">
-<link rel="stylesheet" href="../css/components.css">
-<link rel="stylesheet" href="../css/faq.css">
-
-<style>
-.faq-wrapper {
-  max-width: 420px;
-  margin: auto;
-  padding: 20px;
-}
-
-.category-card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 16px;
-  overflow: hidden;
-  margin-bottom: 15px;
-  cursor: pointer;
-}
-
-.category-card img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-}
-
-.category-title {
-  padding: 12px;
-  font-weight: bold;
-}
-
-.faq-card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 14px;
-  overflow: hidden;
-  margin-bottom: 12px;
-}
-
-.faq-card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-}
-
-.faq-body {
-  padding: 12px;
-}
-
-.q {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-</style>
-
-</head>
-
-<body>
-
-<div class="bg"></div>
-
-<main class="app">
-  <section class="card faq-wrapper">
-
-    <h1 id="title">FAQ</h1>
-    <p class="sub" id="subtitle">Pilih kategori</p>
-
-    <div id="content"></div>
-
-    <a href="../index.html" class="btn">← Kembali</a>
-
-  </section>
-</main>
+<script src="../js/faq-data.js"></script>
 
 <script>
-
-let state = "category";
-
-const data = {
-  lokasi: {
-    title: "📍 Lokasi",
-    items: [
-      {
-        img: "https://picsum.photos/400/200?1",
-        q: "Sudah sampai lokasi, terus ngapain?",
-        a: "Ikuti arahan petugas keamanan ke ruang tes. Jangan freestyle sendiri."
-      }
-    ]
-  },
-  alfakarir: {
-    title: "🌐 Alfakarir & Data",
-    items: [
-      {
-        img: "https://picsum.photos/400/200?2",
-        q: "NIK saya sudah terdaftar di Alfakarir, ceknya gimana?",
-        a: "Cek panduan di IG: alfakarir.cileungsi2"
-      },
-      {
-        img: "https://picsum.photos/400/200?3",
-        q: "Wajib daftar Alfakarir?",
-        a: "Yes. Semua proses lewat sistem Alfakarir."
-      }
-    ]
-  }
-};
 
 function showCategory(){
   const el = document.getElementById("content");
   el.innerHTML = "";
 
-  el.innerHTML += `
-    <div class="category-card" onclick="showFAQ('lokasi')">
-      <img src="https://picsum.photos/400/200?10">
-      <div class="category-title">📍 Lokasi</div>
-    </div>
-  `;
-
-  el.innerHTML += `
-    <div class="category-card" onclick="showFAQ('alfakarir')">
-      <img src="https://picsum.photos/400/200?11">
-      <div class="category-title">🌐 Alfakarir & Data</div>
-    </div>
-  `;
+  FAQ_DATA.forEach((cat, index) => {
+    el.innerHTML += `
+      <div class="category-card" onclick="showFAQ(${index})">
+        <img src="${cat.image}">
+        <div class="category-title">${cat.title}</div>
+      </div>
+    `;
+  });
 }
 
-function showFAQ(key){
+function showFAQ(index){
   const el = document.getElementById("content");
   el.innerHTML = "";
 
-  data[key].items.forEach(item=>{
+  const category = FAQ_DATA[index];
+
+  category.items.forEach(item=>{
     el.innerHTML += `
       <div class="faq-card">
-        <img src="${item.img}">
+        <img src="${category.image}">
         <div class="faq-body">
           <div class="q">${item.q}</div>
           <div>${item.a}</div>
@@ -151,6 +40,3 @@ function showFAQ(key){
 showCategory();
 
 </script>
-
-</body>
-</html>
