@@ -6,7 +6,7 @@
   position: fixed;
   inset: 0;
   background: var(--bg-image) center/cover;
-  filter: blur(14px) brightness(0.45);
+  filter: blur(14px) brightness(0.4);
 }
 
 .app {
@@ -19,8 +19,9 @@
 .card {
   width: 360px;
   border-radius: 25px;
-  padding: 15px;
+  padding: 18px;
   color: white;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.06);
   backdrop-filter: blur(25px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
