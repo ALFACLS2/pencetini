@@ -1,43 +1,52 @@
 /* HERO */
 .hero {
   position: relative;
-  height: 260px;
-  border-radius: 24px;
+  height: 180px;
+  border-radius: 22px;
   overflow: hidden;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+
+  background: linear-gradient(135deg, #f5f5f5, #eaeaea);
+}
+
+.hero-content {
+  display: flex;
+  height: 100%;
+}
+
+.hero-text {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-text h2 {
+  font-size: 18px;
+  color: #333;
+}
+
+.hero-text span {
+  color: #ff3b3b;
 }
 
 .hero-img {
-  width: 100%;
-  height: 100%;
-  background: var(--bg-image) center/cover no-repeat;
-  filter: blur(3px) brightness(0.7);
-  transform: scale(1.05);
+  width: 40%;
+  background: url('https://res.cloudinary.com/dprt1m1wl/image/upload/v1774676745/ChatGPT_Image_Mar_28_2026_12_44_07_PM_uiti48.png') center/cover no-repeat;
 }
 
-.hero-card {
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 90%;
-  padding: 18px;
-  border-radius: 20px;
-
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(16px);
-
-  border: 1px solid rgba(255,255,255,0.2);
+/* TITLE */
+.title {
+  margin-bottom: 15px;
 }
 
-.hero-card h1 {
+.title h1 {
   font-size: 20px;
 }
 
-.hero-card p {
+.title p {
   font-size: 13px;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 /* BUTTON */
@@ -53,21 +62,34 @@
   color: white;
 
   background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
 
   border: 1px solid rgba(255,255,255,0.1);
   transition: 0.2s;
 }
 
 .btn:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
-/* PRIMARY BUTTON (STEP 1) */
+/* PRIMARY */
 .btn.primary {
-  background: linear-gradient(135deg, #ff2e2e, #ffcc00);
-  color: black;
+  background: linear-gradient(135deg, #ff3b3b, #ff8c00, #ffd700);
+  color: white;
   font-weight: bold;
+  box-shadow: 0 5px 20px rgba(255,100,0,0.4);
+}
+
+/* GHOST */
+.btn.ghost {
+  background: rgba(255,255,255,0.05);
+  opacity: 0.8;
+}
+
+/* SMALL BUTTON */
+.btn.small {
+  padding: 12px;
+  font-size: 13px;
 }
 
 /* GRID */
@@ -82,6 +104,13 @@
   height: 1px;
   background: rgba(255,255,255,0.1);
   margin: 15px 0;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.6;
 }
 
 /* CHATBOT */
