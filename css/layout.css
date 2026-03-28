@@ -2,23 +2,19 @@
   --bg-image: url('https://res.cloudinary.com/dprt1m1wl/image/upload/v1774676745/ChatGPT_Image_Mar_28_2026_12_44_07_PM_uiti48.png');
 }
 
-/* ===== BACKGROUND ===== */
+/* BACKGROUND */
 .bg {
   position: fixed;
   inset: 0;
-
   background: var(--bg-image) center/cover no-repeat;
 
-  /* lebih cinematic */
   filter: blur(20px) brightness(0.35);
-
-  /* supaya blur ga pecah pinggir */
   transform: scale(1.2);
 
   z-index: -1;
 }
 
-/* ===== CONTAINER ===== */
+/* CONTAINER */
 .app {
   min-height: 100dvh;
   display: flex;
@@ -27,7 +23,7 @@
   padding: 20px;
 }
 
-/* ===== CARD ===== */
+/* CARD */
 .card {
   width: 360px;
   border-radius: 25px;
@@ -45,7 +41,7 @@
   position: relative;
 }
 
-/* ===== MOBILE FIX ===== */
+/* MOBILE */
 @media (max-width: 768px) {
 
   .card {
