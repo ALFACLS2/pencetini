@@ -1,57 +1,66 @@
-const home = document.getElementById("homePage");
+// ================= FAQ NAVIGATION =================
+
+const homePage = document.getElementById("homePage");
 const categoryPage = document.getElementById("faqCategoryPage");
 const detailPage = document.getElementById("faqDetailPage");
 
-const categoryList = document.getElementById("faqCategoryList");
-const detailList = document.getElementById("faqDetailList");
-const title = document.getElementById("faqTitle");
+const faqBtn = document.getElementById("faqBtn");
+const backHomeBtn = document.getElementById("backHomeBtn");
+const backCategoryBtn = document.getElementById("backCategoryBtn");
 
-// NAV
-document.getElementById("faqBtn").onclick = () => {
-  home.classList.remove("active");
-  categoryPage.classList.add("active");
+faqBtn.onclick = () => {
+  showPage("category");
+  renderCategories();
 };
 
-document.getElementById("backHomeBtn").onclick = () => {
+backHomeBtn.onclick = () => showPage("home");
+backCategoryBtn.onclick = () => showPage("category");
+
+function showPage(page) {
+  homePage.classList.remove("active");
   categoryPage.classList.remove("active");
-  home.classList.add("active");
-};
-
-document.getElementById("backCategoryBtn").onclick = () => {
   detailPage.classList.remove("active");
-  categoryPage.classList.add("active");
-};
 
-// RENDER CATEGORY
-FAQ_DATA.forEach((cat, i) => {
-  const div = document.createElement("div");
-  div.className = "category-card";
-  div.innerHTML = `
-    <img src="${cat.image}">
-    <div class="category-title">${cat.title}</div>
-  `;
-  div.onclick = () => openCategory(i);
-  categoryList.appendChild(div);
-});
+  if (page === "home") homePage.classList.add("active");
+  if (page === "category") categoryPage.classList.add("active");
+  if (page === "detail") detailPage.classList.add("active");
+}
 
-// OPEN CATEGORY
-function openCategory(i) {
-  categoryPage.classList.remove("active");
-  detailPage.classList.add("active");
+// ================= RENDER CATEGORY =================
 
-  const data = FAQ_DATA[i];
-  title.innerText = data.title;
+function renderCategories() {
+  const container = document.getElementById("faqCategoryList");
+  container.innerHTML = "";
 
-  detailList.innerHTML = "";
-
-  data.items.forEach(item => {
-    const div = document.createElement("div");
-    div.className = "faq-item";
-    div.innerHTML = `
-      <h3>${item.q}</h3>
-      <p>${item.a}</p>
+  FAQ_DATA.forEach((cat, index) => {
+    container.innerHTML += `
+      <div class="category-card" onclick="openCategory(${index})">
+        <img src="${cat.image}">
+        <div class="category-title">${cat.title}</div>
+      </div>
     `;
-    div.onclick = () => div.classList.toggle("active");
-    detailList.appendChild(div);
   });
+}
+
+// ================= OPEN CATEGORY =================
+
+function openCategory(index) {
+  const category = FAQ_DATA[index];
+
+  document.getElementById("faqTitle").innerText = category.title;
+
+  const container = document.getElementById("faqDetailList");
+  container.innerHTML = "";
+
+  category.items.forEach(item => {
+    container.innerHTML += `
+      <div class="faq-item" onclick="this.classList.toggle('active')">
+        <img src="${category.image}">
+        <h3>${item.q}</h3>
+        <p>${item.a}</p>
+      </div>
+    `;
+  });
+
+  showPage("detail");
 }
