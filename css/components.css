@@ -2,7 +2,7 @@
   height: 220px;
   border-radius: 18px;
   overflow: hidden;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .hero-img {
@@ -14,13 +14,13 @@
 /* TEXT */
 h1 {
   font-size: 24px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .sub {
   font-size: 13px;
   opacity: 0.75;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   line-height: 1.5;
 }
 
@@ -38,20 +38,18 @@ h1 {
   border: 1px solid rgba(255,255,255,0.12);
 
   transition: all 0.25s ease;
+  cursor: pointer;
 }
 
-/* HOVER */
 .btn:hover {
   transform: translateY(-2px) scale(1.02);
   background: rgba(255,255,255,0.15);
 }
 
-/* CLICK */
 .btn:active {
   transform: scale(0.97);
 }
 
-/* PRIMARY */
 .primary {
   background: linear-gradient(90deg, #ff7a18, #ff3d81);
   box-shadow: 0 8px 20px rgba(255,100,120,0.4);
