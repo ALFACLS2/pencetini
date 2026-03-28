@@ -2,17 +2,13 @@
   --bg-image: url('https://res.cloudinary.com/dprt1m1wl/image/upload/v1774676745/ChatGPT_Image_Mar_28_2026_12_44_07_PM_uiti48.png');
 }
 
-/* BACKGROUND */
 .bg {
   position: fixed;
   inset: 0;
-  background: var(--bg-image) center/cover no-repeat;
+  background: var(--bg-image) center/cover;
   filter: blur(14px) brightness(0.45);
-  transform: scale(1.1);
-  z-index: -1;
 }
 
-/* CENTER */
 .app {
   min-height: 100vh;
   display: flex;
@@ -20,20 +16,11 @@
   align-items: center;
 }
 
-/* CARD */
 .card {
-  position: relative;
   width: 360px;
-  height: 560px;
-
   border-radius: 25px;
   padding: 15px;
   color: white;
-
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(25px);
-
-  border: 1px solid rgba(255,255,255,0.1);
-
-  overflow: hidden;
 }
