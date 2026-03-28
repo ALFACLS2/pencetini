@@ -19,12 +19,21 @@
 
     <!-- HERO -->
     <div class="hero">
-      <div class="hero-img"></div>
+      <div class="hero-overlay"></div>
 
-      <div class="hero-card">
-        <h1>Start Your Career</h1>
-        <p>Ikuti langkah berikut untuk melamar kerja</p>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h2>Your Career,<br>One Step <span>Ahead</span></h2>
+        </div>
+
+        <div class="hero-img"></div>
       </div>
+    </div>
+
+    <!-- TITLE -->
+    <div class="title">
+      <h1>Start Your Career</h1>
+      <p>Ikuti langkah berikut untuk melamar kerja</p>
     </div>
 
     <!-- STEP -->
@@ -32,18 +41,30 @@
       🚀 Step 1: Register Account
     </a>
 
-    <a href="#" class="btn">
+    <a href="#" class="btn ghost">
       📄 Step 2: Apply Job
     </a>
 
     <!-- MENU -->
+    <div class="grid">
+      <a href="faq.html" class="btn small">❓ FAQ</a>
+      <button onclick="openChatbot()" class="btn small">💬 Chatbot</button>
+      <a href="#" class="btn small">🧭 Alur</a>
+      <a href="#" class="btn small">💬 Kata Mereka</a>
+    </div>
+
     <div class="separator"></div>
 
     <div class="grid">
-      <a href="faq.html" class="btn">❓ FAQ</a>
-      <button onclick="openChatbot()" class="btn">💬 Chatbot</button>
-      <a href="#" class="btn">🧭 Alur</a>
-      <a href="#" class="btn">💬 Testimoni</a>
+      <a href="#" class="btn small">🎵 TikTok</a>
+      <a href="#" class="btn small">📸 Instagram</a>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>Powered by <strong>REC CLS 2</strong></p>
+      <p>The Creator</p>
+      <p>404._.anggoro</p>
     </div>
 
   </section>
@@ -56,10 +77,10 @@
 
     <div class="chat-input">
       <input id="chat-input" placeholder="Tanya di sini...">
-      <button onclick="sendMessage()" class="btn">Kirim</button>
+      <button onclick="sendMessage()" class="btn small">Kirim</button>
     </div>
 
-    <button onclick="closeChatbot()" class="btn">Tutup</button>
+    <button onclick="closeChatbot()" class="btn small">Tutup</button>
   </div>
 </div>
 
