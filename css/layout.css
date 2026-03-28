@@ -2,57 +2,32 @@
   --bg-image: url('https://res.cloudinary.com/dprt1m1wl/image/upload/v1774676745/ChatGPT_Image_Mar_28_2026_12_44_07_PM_uiti48.png');
 }
 
-/* BACKGROUND */
 .bg {
   position: fixed;
   inset: 0;
   background: var(--bg-image) center/cover no-repeat;
 
-  filter: blur(20px) brightness(0.35);
+  filter: blur(30px) brightness(0.3);
   transform: scale(1.2);
 
   z-index: -1;
 }
 
-/* CONTAINER */
 .app {
-  min-height: 100dvh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
 }
 
-/* CARD */
 .card {
-  width: 360px;
-  border-radius: 25px;
-  padding: 18px;
-  color: white;
+  width: 380px;
+  padding: 20px;
+  border-radius: 24px;
 
   background: rgba(255,255,255,0.06);
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(20px);
 
   border: 1px solid rgba(255,255,255,0.1);
-
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-  position: relative;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-  .card {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    background: rgba(0,0,0,0.7);
-  }
-
-  .bg {
-    filter: blur(16px) brightness(0.35);
-    transform: scale(1.15);
-  }
-
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
